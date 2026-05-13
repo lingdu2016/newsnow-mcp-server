@@ -1,5 +1,4 @@
-import { server } from "../src/index.js";
+import { handle } from "hono/vercel"
+import { server } from "../src/index.js"
 
-export default async function handler(req: any, res: any) {
-  return await server.handleServerRequest(req, res);
-}
+export default handle(server.getApp())

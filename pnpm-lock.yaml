@@ -17,6 +17,9 @@ importers:
       fastmcp:
         specifier: ^4.0.1
         version: 4.0.1
+      hono:
+        specifier: ^4.12.18
+        version: 4.12.18
       ofetch:
         specifier: ^1.4.1
         version: 1.4.1
@@ -4966,7 +4969,7 @@ snapshots:
       strict-event-emitter-types: 2.0.0
       undici: 7.25.0
       uri-templates: 0.2.0
-      xsschema: 0.4.4(zod-to-json-schema@3.25.2(zod@3.24.3))(zod@4.4.3)
+      xsschema: 0.4.4(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
       yargs: 18.0.0
       zod: 4.4.3
       zod-to-json-schema: 3.25.2(zod@4.4.3)
@@ -6507,7 +6510,7 @@ snapshots:
 
   xml-name-validator@4.0.0: {}
 
-  xsschema@0.4.4(zod-to-json-schema@3.25.2(zod@3.24.3))(zod@4.4.3):
+  xsschema@0.4.4(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3):
     optionalDependencies:
       zod: 4.4.3
       zod-to-json-schema: 3.25.2(zod@4.4.3)
