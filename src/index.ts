@@ -15,6 +15,18 @@ const baseUrl = process.env.BASE_URL
 export const server = new FastMCP({
   name: "NewsNow",
   version: packageJson.version as `${number}.${number}.${number}`,
+  authenticate: async (headers) => {
+    const apiKey = process.env.API_KEY
+    if (!apiKey) {
+      return true
+    }
+    const authHeader = headers.authorization
+    if (!authHeader) {
+      return false
+    }
+    const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : authHeader
+    return token === apiKey
+  },
 })
 
 server.addTool({
