@@ -44,6 +44,6 @@ app.post("/api/oauth/token", async (c) => {
   return c.json({ error: "invalid_client" }, 401)
 })
 
-app.route("/", server.getApp())
+app.route("/", server.getRouter())
 
 export default handle(app)
