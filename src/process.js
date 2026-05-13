@@ -1,4 +1,4 @@
-import sources from "./sources.json"
+import sources from "./sources.json" with { type: "json" }
 
 export const description = Object.entries(sources).filter(([_, source]) => {
   if (source.redirect) {

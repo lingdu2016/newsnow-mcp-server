@@ -4,7 +4,7 @@ import { FastMCP } from "fastmcp"
 import { z } from "zod"
 import { $fetch } from "ofetch"
 import { config } from "dotenv"
-import packageJson from "../package.json"
+import packageJson from "../package.json" with { type: "json" }
 import { description } from "./process"
 import type { SourceResponse } from "./typing"
 
