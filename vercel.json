@@ -1,6 +1,8 @@
 {
   "version": 2,
   "rewrites": [
+    { "source": "/api/oauth/authorize", "destination": "/api/index" },
+    { "source": "/api/oauth/token", "destination": "/api/index" },
     { "source": "/sse", "destination": "/api/index" },
     { "source": "/messages", "destination": "/api/index" },
     { "source": "/", "destination": "/index.html" }
