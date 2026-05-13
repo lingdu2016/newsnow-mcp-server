@@ -46,7 +46,7 @@ server.addTool({
   },
 })
 
-if (!process.env.VERCEL) {
+if (process.env.MCP_TRANSPORT === "stdio" || (!process.env.VERCEL && !process.env.MCP_TRANSPORT)) {
   if (!process.env.BASE_URL) {
     console.error("BASE_URL is not set")
     process.exit(1)
