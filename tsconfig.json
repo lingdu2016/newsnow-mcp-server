@@ -20,5 +20,5 @@
     "rootDir": ".",
     "baseUrl": ".",
   },
-  "include": ["src/**/*.ts", "src/**/*.js"]
+  "include": ["src/**/*.ts", "src/**/*.js", "api/**/*.ts"]
 }
