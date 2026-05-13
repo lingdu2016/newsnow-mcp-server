@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/sse", "destination": "/api/index" },
+    { "source": "/messages", "destination": "/api/index" }
+  ]
+}

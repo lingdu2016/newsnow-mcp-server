@@ -10,13 +10,9 @@ import type { SourceResponse } from "./typing"
 
 config()
 
-if (!process.env.BASE_URL) {
-  console.error("BASE_URL is not set")
-  process.exit(1)
-}
 const baseUrl = process.env.BASE_URL
 
-const server = new FastMCP({
+export const server = new FastMCP({
   name: "NewsNow",
   version: packageJson.version as `${number}.${number}.${number}`,
 })
@@ -29,6 +25,9 @@ server.addTool({
     count: z.any().default(10).describe("count of news to return."),
   }),
   execute: async ({ id, count }) => {
+    if (!baseUrl) {
+      throw new Error("BASE_URL is not set")
+    }
     let n = Number(count)
     if (Number.isNaN(n) || n < 1) {
       n = 10
@@ -47,6 +46,12 @@ server.addTool({
   },
 })
 
-server.start({
-  transportType: "stdio",
-})
+if (!process.env.VERCEL) {
+  if (!process.env.BASE_URL) {
+    console.error("BASE_URL is not set")
+    process.exit(1)
+  }
+  server.start({
+    transportType: "stdio",
+  })
+}
