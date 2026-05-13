@@ -5,8 +5,8 @@ import { z } from "zod"
 import { $fetch } from "ofetch"
 import { config } from "dotenv"
 import packageJson from "../package.json" with { type: "json" }
-import { description } from "./process"
-import type { SourceResponse } from "./typing"
+import { description } from "./process.js"
+import type { SourceResponse } from "./typing.js"
 
 config()
 
